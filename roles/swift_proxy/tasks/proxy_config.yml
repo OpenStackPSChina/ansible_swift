@@ -1,0 +1,28 @@
+---
+
+#
+# Install and config swift proxy node
+#
+
+- name: Install required packages for proxy node
+  sudo: yes
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - swift-proxy
+    - python-swiftclient
+    - python-keystoneclient
+#    - python-keystonemiddleware
+    - memcached
+
+
+# Start to config proxy node
+
+- name: Create the /etc/swift directory
+  sudo: yes
+  file: state=directory path=/etc/swift
+
+
+- name: Config proxy-server.conf for proxy service
+  sudo: yes
+  template: src=default-proxy-server.j2 dest=/etc/swift/proxy-server.conf
+

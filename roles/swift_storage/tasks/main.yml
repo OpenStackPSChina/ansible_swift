@@ -1,0 +1,12 @@
+--
+
+#
+# Install and config Swift proxy node
+#
+
+- include: storage_config.yml
+
+- include: ring_config.yml
+
+- include: storage_start.yml
+

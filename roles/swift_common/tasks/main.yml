@@ -1,0 +1,9 @@
+---
+
+#
+# Common prepare for proxy node and storage node
+#
+
+- include: package_cache.yml
+
+- include: ntp.yml

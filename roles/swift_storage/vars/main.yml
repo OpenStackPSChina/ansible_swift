@@ -1,0 +1,11 @@
+---
+
+storage_utility_packages:
+    - xfsprogs
+    - rsync
+    - swift
+    - swift-account
+    - swift-container
+    - swift-object
+
+

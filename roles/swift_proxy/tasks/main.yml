@@ -1,0 +1,12 @@
+---
+
+#
+# Install and config Swift proxy node
+#
+#- include: authentication.yml
+
+- include: proxy_config.yml
+
+#- include: ring_config.yml
+
+#- include: proxy_start.yml

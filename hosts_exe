@@ -1,0 +1,9 @@
+#
+# hosts for exe
+#
+
+[proxy_node]
+proxy ansible_ssh_host=192.168.5.151
+
+[storage_node]
+storage01 ansible_ssh_host=192.168.5.152

@@ -1,0 +1,12 @@
+
+# Variables listed here are applicable to all
+
+ntpserver: 192.168.5.145
+storage_node1: ansible-node3
+storage_node2: ansible-node4
+
+keystone_admin_url:
+keystone_admin_token:
+swift_public_url:
+swift_internal_url:
+swift_admin_url:

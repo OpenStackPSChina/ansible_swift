@@ -1,0 +1,64 @@
+---
+
+#
+# Playbook to restore installation completely from all nodes
+#
+
+- hosts: all
+  tasks:
+
+  - name: Stop all the services
+    sudo: yes
+    service: name=ntp state=stopped
+
+  - name: Remove all the packages
+    sudo: yes
+    apt: pkg={{ item }} state=removed
+    ignore_errors: yes
+    with_items:
+      - ubuntu-cloud-keyring
+      - swift
+      - ntp
+
+  - name: Remove all the configs
+    sudo: yes
+    file: path={{ item }} state=absent
+    ignore_errors: yes
+    with_items:
+      - /etc/ntp.conf
+
+- hosts: proxy_node
+  tasks:
+
+#  - name: Stop all the services
+#    sudo: yes
+#    service: name={{ item }} state=stopped
+#    ignore_errors: yes
+#    with_items:
+#      - 
+
+  - name: Remove all the packages
+    sudo: yes
+    apt: pkg={{ item }} state=removed
+    ignore_errors: yes
+    with_items:
+      - swift-proxy
+      - python-swiftclient
+      - python-keystoneclient
+#      - python-keystonemiddleware
+      - memcached
+
+#  - name: Remove all the configs
+#    sudo: yes
+#    file: path={{ item }} state=absent
+#    ignore_errors: yes
+#    with_items:
+#      - 
+
+  - name: Remove all working dirs
+    sudo: yes
+    file: path={{ item }} state=absent
+    ignore_errors: yes
+    with_items:
+      - /etc/swift
+

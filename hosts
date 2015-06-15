@@ -1,0 +1,12 @@
+
+# Swift related sector
+
+# Swift proxy node
+[proxy_node]
+192.168.130.13
+
+# Swift storage node
+[storage_node]
+192.168.130.14
+
+

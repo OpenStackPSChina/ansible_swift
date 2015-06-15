@@ -1,0 +1,58 @@
+---
+
+#
+# Config and install storage nodes
+#
+
+- name: Configure the management interface for each storage node
+  template: src=default-interfaces.j2 dest=/etc/network/interfaces
+
+
+# This will be hardcode based on the environment in UBP at first
+
+- name: Set the hostname of the nodes
+  template: src=default-hostname.j2 dest=/etc/hostname
+
+
+# Configure shared items on both storage nodes
+
+- name: Install required utility packages
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items: storage_utility_packages
+
+
+- name: Format the devices’ partitions as XFS
+  command: mkfs.xfs /dev/{{ devices }}
+  with_items: 
+
+
+- name: Create the mount point directory structure for the devices
+  command:
+
+
+- name: Config and distribute /etc/fstab file to storage nodes
+  template:
+
+
+- name: Mount the devices on each storage nodes
+  command:
+
+
+- name: Config and distribute /etc/rsyncd.conf file
+  template:
+
+
+- name: Config and distribute /etc/default/rsync file
+  template:
+
+
+- name: Enable the rsync service
+  command:
+
+
+- name: Start the rsync service
+  command:
+
+
+- name: 
+
