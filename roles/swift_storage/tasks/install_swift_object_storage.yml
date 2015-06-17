@@ -1,0 +1,11 @@
+---
+
+# install swift object storage
+#
+- name: install swift object storage
+  apt: pkg={{ item }} state=installed
+  with_items: 
+    - swift
+    - swift-account
+    - swift-container
+    - swift-object

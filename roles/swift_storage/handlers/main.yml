@@ -1,0 +1,7 @@
+---
+
+# handlers for rsync
+- include: upstart_rsync.yml
+- include: start_rsync.yml
+- include: stop_rsync.yml
+- include: restart_rsync.yml

@@ -1,0 +1,20 @@
+---
+
+#
+# Create service credentials and object storage service API endpoints
+#
+
+- name: create swift service user
+  #keystone_user: user=swift tenant={{ swift_service_tenant }} password= {{ swift_service_password }}
+  command: /usr/bin/openstack user create --password {{ swift_service_password }} --project {{ swift_service_tenant }} --enable swift
+
+- name: add role to swift user
+  #keystone_user: role=admin user=swift tenant={{ swift_service_tenant }}
+  command: /usr/bin/openstack role add --project {{ swift_service_tenant }} --user swift admin
+
+- name: create swift service entity
+  command: /usr/bin/openstack service create --name swift --description "OpenStack Object Storage" object-store
+
+- name: create swift api endpoint
+  command: /usr/bin/openstack endpoint create --publicurl 'http://{{ swift_public_url }}:8080/v1/AUTH_%(tenant_id)s' --internalurl 'http://{{ swift_internal_url }}:8080/v1/AUTH_%(tenant_id)s' --adminurl http://{{ swift_admin_url }}:8080 --region {{ keystone_region_name }} object-store
+

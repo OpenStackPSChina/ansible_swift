@@ -2,11 +2,9 @@
 
 #
 # Install and config Swift proxy node
-#
-#- include: authentication.yml
 
-- include: proxy_config.yml
+- include: init_swift_in_keystone.yml
+- include: install_swift_proxy.yml
+- include: config_swift_proxy.yml
 
-#- include: ring_config.yml
 
-#- include: proxy_start.yml

@@ -1,0 +1,14 @@
+---
+
+# install swift proxy
+#
+
+- name: install swift proxy
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - swift
+    - swift-proxy
+    - python-swiftclient
+    - python-keystoneclient
+    - python-keystonemiddleware
+    - memcached

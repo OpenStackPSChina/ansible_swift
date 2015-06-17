@@ -1,12 +1,16 @@
---
+---
 
-#
 # Install and config Swift proxy node
+- include: install_swift_object_support_utils.yml
+- include: config_swift_object_disks.yml
+- include: config_swift_object_rsync.yml
+# Install and config Swift storage nodes
+# on all storage node
+- include: install_swift_object_storage.yml
+- include: config_swift_object_storage.yml
 #
-
-- include: storage_config.yml
-
-- include: ring_config.yml
-
-- include: storage_start.yml
-
+# only on first storage node
+- include: create_swift_rings.yml
+# on all storage node
+- include: sync_swift_rings.yml
+- include: config_swift_object_finalize.yml

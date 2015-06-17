@@ -13,3 +13,6 @@
 # install and config ntp service on all nodes
 - include: install_ntp_service.yml
 - include: config_ntp_service.yml
+
+# generate hosts file for all nodes
+- include: config_ntp_service.yml

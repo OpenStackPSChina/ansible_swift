@@ -1,0 +1,5 @@
+---
+
+# restart rsync service
+- name: restart rsync service
+  service: name=rsync state=restarted

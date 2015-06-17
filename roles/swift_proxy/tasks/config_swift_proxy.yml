@@ -1,0 +1,11 @@
+---
+# config swift proxy
+#
+- name: create etc swift dir
+  file: state=directory path=/etc/swift
+
+- name: create swift proxy conf
+  template: src=proxy-server.conf.j2 dest=/etc/swift/proxy-server.conf
+  
+- name: create memcache conf
+  template: src=memcache.conf.j2 dest=/etc/swift/memcache.conf

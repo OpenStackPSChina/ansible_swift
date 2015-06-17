@@ -1,0 +1,12 @@
+---
+
+# the first storage node
+#
+- hosts:
+  - storage_first_node
+
+# TODO, need to split swift_storage_first_node role from swift_storage
+  roles:
+  - swift_common
+  - swift_storage
+  

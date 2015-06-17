@@ -285,14 +285,14 @@ user_test5_tester5 = testing5 service
 #
 [filter:authtoken]
 paste.filter_factory = keystonemiddleware.auth_token:filter_factory
-identity_uri = http://192.168.130.12:35357/
-auth_uri = http://192.168.130.12:5000/
+identity_uri = http://{{ keystone_admin_url }}:35357/
+auth_uri = http://{{ keystone_public_url }}:5000/
 auth_plugin = password
 project_domain_id = default
 user_domain_id = default
-project_name = service
+project_name = {{ swift_service_tenant }}
 username = swift
-password = 123456
+password = {{ swift_service_password }}
 delay_auth_decision = true
 
 # admin_tenant_name = service
@@ -393,7 +393,7 @@ use = egg:swift#memcache
 # memcache.conf (see memcache.conf-sample) or lacking that file, it will
 # default to the value below. You can specify multiple servers separated with
 # commas, as in: 10.1.2.3:11211,10.1.2.4:11211
-memcache_servers = 127.0.0.1:11211
+# memcache_servers = 127.0.0.1:11211
 #
 # Sets how memcache values are serialized and deserialized:
 # 0 = older, insecure pickle serialization

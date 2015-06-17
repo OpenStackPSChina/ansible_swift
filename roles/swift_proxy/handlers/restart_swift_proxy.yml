@@ -1,0 +1,5 @@
+---
+
+# restart swift proxy
+- name: restart swift proxy
+  service: name=swift-proxy state=restarted

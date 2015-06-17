@@ -1,0 +1,5 @@
+---
+
+# stop rsync service
+- name: stop rsync service
+  service: name=rsync state=stopped

@@ -1,0 +1,21 @@
+---
+
+# config swift object storage nodes
+#
+- name: config swift account server conf
+  template: src=account-server.conf.j2 dest=/etc/swift/account-server.conf
+
+- name: config swift container server conf
+  template: src=container-server.conf.j2 dest=/etc/swift/container-server.conf
+
+- name: config swift object server conf
+  template: src=object-server.conf.j2 dest=/etc/swift/object-server.conf
+
+- name: ensure swift object srv node ownership
+  command: chown -R swift:swift /srv/node
+  
+- name: create swift recon directory
+  command: mkdir -p /var/cache/swift
+  
+- name: ensure swift recon dir ownership
+  command: chown -R swift:swift /var/cache/swift

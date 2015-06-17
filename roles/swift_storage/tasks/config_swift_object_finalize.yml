@@ -1,0 +1,11 @@
+---
+
+# finalize the configuration of swift
+- name: create swift conf file 
+  template: src=swift.conf.j2 dest=/etc/swift/swift.conf
+
+- name: ensure etc swift ownership
+  command: chown -R swift:swift /etc/swift
+
+- name: start all swift object service
+  command: swift-init all start

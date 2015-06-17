@@ -1,0 +1,5 @@
+---
+
+# start swift proxy
+- name: start swift proxy
+  service: name=swift-proxy state=started

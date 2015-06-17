@@ -1,0 +1,11 @@
+---
+
+# swift proxy
+#
+- hosts:
+  - proxy_nodes
+
+  roles:
+  - swift_common
+  - swift_proxy
+  

@@ -1,0 +1,19 @@
+---
+
+# sync ring files to other swift nodes
+# workaround
+# -- fetch ring files to ansible host
+# -- then copy files to all storage nodes
+
+# fetch
+
+# push
+# on other swift storage nodes
+- name: sync swift account ring file 
+  copy: src=/tmp/swift-rings/account.ring.gz dest=/etc/swift/account.ring.gz owner=swift group=swift
+
+- name: sync swift container ring file 
+  copy: src=/tmp/swift-rings/container.ring.gz dest=/etc/swift/container.ring.gz owner=swift group=swift
+
+- name: sync swift object ring file 
+  copy: src=/tmp/swift-rings/object.ring.gz dest=/etc/swift/object.ring.gz owner=swift group=swift

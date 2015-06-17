@@ -1,0 +1,8 @@
+---
+
+# handlers for swift proxy
+- include: upstart_swift_proxy.yml
+- include: start_swift_proxy.yml
+- include: stop_swift_proxy.yml
+- include: restart_swift_proxy.yml
+- include: restart_memcached.yml

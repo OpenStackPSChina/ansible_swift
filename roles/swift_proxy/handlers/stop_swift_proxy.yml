@@ -1,0 +1,5 @@
+---
+
+# stop swift proxy
+- name: stop swift proxy
+  service: name=swift-proxy state=stopped
