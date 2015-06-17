@@ -1,0 +1,5 @@
+---
+- name: install cloud keyring
+  apt: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+    - ubuntu-cloud-keyring

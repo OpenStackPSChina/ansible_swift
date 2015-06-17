@@ -1,0 +1,4 @@
+---
+# restart ntp service
+- name: restart ntp service
+  service: name=ntp state=restarted

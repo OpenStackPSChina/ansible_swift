@@ -1,0 +1,8 @@
+---
+
+# include all ntp handlers
+#
+- include: start_ntp_service.yml
+- include: stop_ntp_service.yml
+- include: restart_ntp_service.yml
+- include: upstart_ntp_service.yml

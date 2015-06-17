@@ -1,9 +1,15 @@
 ---
 
-#
-# Common prepare for proxy node and storage node
-#
+# Common prepare for all nodes
 
-- include: package_cache.yml
+# TODO: 
+# configure apt sources.list
+# update sources
+# dist upgrade
 
-- include: ntp.yml
+# install ubuntu_cloud_keyring from os repository
+- include: install_cloud_keyring.yml
+
+# install and config ntp service on all nodes
+- include: install_ntp_service.yml
+- include: config_ntp_service.yml

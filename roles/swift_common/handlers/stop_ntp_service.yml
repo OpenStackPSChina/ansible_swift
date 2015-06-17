@@ -1,0 +1,4 @@
+---
+# stop ntp service
+- name: stop ntp service
+  service: name=ntp state=stopped

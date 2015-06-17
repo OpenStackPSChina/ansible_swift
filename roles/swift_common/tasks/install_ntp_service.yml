@@ -1,0 +1,5 @@
+---
+- name: install ntp service
+  apt: pkg=ntp state=installed
+  tags: ntp
+
