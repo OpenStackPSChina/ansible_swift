@@ -8,7 +8,7 @@
   remote_user: "{{ ansible_remote_user }}"
   become: yes
   become_user: root
-  become_method: su
+  become_method: sudo
 
   roles:
   - swift_common
