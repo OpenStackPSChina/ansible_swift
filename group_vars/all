@@ -2,24 +2,35 @@
 # Variables listed here are applicable to all
 
 # old vars
-ntpserver: 192.168.5.145
+
 #storage_node1: ansible-node3
 #storage_node2: ansible-node4
 
 #keystone_admin_url:
 #keystone_admin_token:
 
-# new vars
+#
+## new vars
+#
+ntp_server_name: 192.168.5.145
+
+# ansible target info
+ansible_remote_user: pscloud
+
+# keystone info
 keystone_public_url: 
 keystone_internal_url: 
 keystone_admin_url: 
 keystone_region_name: RegionOne
+
+# swift info
 swift_service_tenant: service
 swift_service_password: swift
 swift_public_url: 
 swift_internal_url: 
 swift_admin_url: 
 
+# disk info
 storage_node_disk_list:
   - disk: sdb
   - disk: sdc

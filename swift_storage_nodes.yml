@@ -4,6 +4,10 @@
 #
 - hosts:
   - storage_nodes
+  remote_user: {{ ansible_remote_user }}
+  become: yes
+  become_user: root
+  become_method: su
 
 # TODO, need to split swift_storage_first_node role from swift_storage
   roles:
