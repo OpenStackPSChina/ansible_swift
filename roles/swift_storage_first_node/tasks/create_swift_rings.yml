@@ -16,7 +16,7 @@
   command: swift-ring-builder account.builder add r1z1-{{ swift_management_address }}:6002/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
-  with_items: {{ storage_node_disk_list }}
+  with_items: "{{ storage_node_disk_list }}"
   tags:
     - swift_first_storage_node
 
@@ -41,7 +41,7 @@
   command: swift-ring-builder container.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
-  with_items: {{ storage_node_disk_list }}
+  with_items: "{{ storage_node_disk_list }}"
   tags:
     - swift_first_storage_node
 
@@ -67,7 +67,7 @@
   command: swift-ring-builder object.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
-  with_items: {{ storage_node_disk_list }}
+  with_items: "{{ storage_node_disk_list }}"
   tags:
     - swift_first_storage_node
 

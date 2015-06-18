@@ -3,9 +3,9 @@
 # swift proxy
 #
 - hosts:
-  - proxy_nodes
+  - swift_proxy_nodes
 
-  remote_user: {{ ansible_remote_user }}
+  remote_user: "{{ ansible_remote_user }}"
   become: yes
   become_user: root
   become_method: su

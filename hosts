@@ -5,10 +5,10 @@
 [swift_proxy_nodes]
 192.168.130.13
 
-# Swift storage node
-[swift_storage_nodes]
+# Swift storage first node
+[swift_storage_first_node]
 192.168.130.14
 
-# Swift storage 1st node
-[swift_storage_first_node]
+# Swift storage other nodes
+[swift_storage_other_nodes]
 192.168.130.14

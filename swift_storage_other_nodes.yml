@@ -3,8 +3,8 @@
 # the storage nodes
 #
 - hosts:
-  - storage_nodes
-  remote_user: {{ ansible_remote_user }}
+  - swift_storage_other_nodes
+  remote_user: "{{ ansible_remote_user }}"
   become: yes
   become_user: root
   become_method: su

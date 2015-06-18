@@ -3,9 +3,9 @@
 # the first storage node
 #
 - hosts:
-  - storage_first_node
+  - swift_storage_first_node
 
-  remote_user: {{ ansible_remote_user }}
+  remote_user: "{{ ansible_remote_user }}"
   become: yes
   become_user: root
   become_method: su
