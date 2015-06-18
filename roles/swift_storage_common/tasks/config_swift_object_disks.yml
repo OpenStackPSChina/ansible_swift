@@ -3,17 +3,17 @@
 # config disks for swift object storage nodes
 #
 - name: format swift object disks
-  command: mkfs.xfs /dev/{{ item.disk }}
+  shell: mkfs.xfs /dev/{{ item.disk }}
   with_items: "{{ storage_node_disk_list }}"
 
 - name: create swift object disks mount points
-  command: mkdir -p /srv/node/{{ item.disk }}
+  shell: mkdir -p /srv/node/{{ item.disk }}
   with_items: "{{ storage_node_disk_list }}"
 
 - name: add swift object disks fstab enitity
-  command: echo "/dev/{{ item.disk }}		/srv/node/{{ item.disk }}		xfs		noatime,nodiratime,nobarrier,logbufs=8 0 2" >> /etc/fstab
+  shell: echo "/dev/{{ item.disk }}		/srv/node/{{ item.disk }}		xfs		noatime,nodiratime,nobarrier,logbufs=8 0 2" >> /etc/fstab
   with_items: "{{ storage_node_disk_list }}"
 
 - name: mount swift object disks
-  command: mount /srv/node/{{ item.disk }}
+  shell: mount /srv/node/{{ item.disk }}
   with_items: "{{ storage_node_disk_list }}"

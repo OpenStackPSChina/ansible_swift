@@ -5,7 +5,7 @@
   template: src=swift.conf.j2 dest=/etc/swift/swift.conf
 
 - name: ensure etc swift ownership
-  command: chown -R swift:swift /etc/swift
+  shell: chown -R swift:swift /etc/swift
   notify: 
    - restart memcached
    - restart swift proxy

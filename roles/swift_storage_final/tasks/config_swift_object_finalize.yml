@@ -5,7 +5,7 @@
   template: src=swift.conf.j2 dest=/etc/swift/swift.conf
 
 - name: ensure etc swift ownership
-  command: chown -R swift:swift /etc/swift
+  shell: chown -R swift:swift /etc/swift
 
 - name: start all swift object service
-  command: swift-init all start
+  shell: swift-init all start
