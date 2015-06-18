@@ -1,5 +1,5 @@
 ---
 - include: swift_proxy_nodes.yml
-- include: swift_first_storage_node.yml
-- include: swift_storage_nodes.yml
+- include: swift_storage_first_node.yml
+- include: swift_storage_other_nodes.yml
   

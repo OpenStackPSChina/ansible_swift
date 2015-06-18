@@ -9,51 +9,76 @@
   command: swift-ring-builder account.builder create 10 3 1
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
 
 - name: add storage node to account ring
   command: swift-ring-builder account.builder add r1z1-{{ swift_management_address }}:6002/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: {{ storage_node_disk_list }}
+  tags:
+    - swift_first_storage_node
 
 - name: rebalance acount ring
   command: swift-ring-builder account.builder rebalance
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
+
 
 # container ring
 - name: create swift base container ring
   command: swift-ring-builder container.builder create 10 3 1
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
+
 
 - name: add storage node to container ring
   command: swift-ring-builder container.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: {{ storage_node_disk_list }}
+  tags:
+    - swift_first_storage_node
+
 
 - name: rebalance container ring
   command: swift-ring-builder container.builder rebalance
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
+
 
 # object ring
 - name: create swift base object ring
   command: swift-ring-builder object.builder create 10 3 1
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
+
 
 - name: add storage node to object ring
   command: swift-ring-builder object.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: {{ storage_node_disk_list }}
+  tags:
+    - swift_first_storage_node
+
 
 - name: rebalance object ring
   command: swift-ring-builder object.builder rebalance
   args:
     chdir: /etc/swift/
+  tags:
+    - swift_first_storage_node
+
 
 # sync ring files to other swift nodes
 # workaround
@@ -63,12 +88,21 @@
 # fetch
 - name: fetch swift account ring file back
   fetch: src=/etc/swift/account.ring.gz dest=/tmp/swift-rings/ flat=yes
+  tags:
+    - swift_first_storage_node
+
 
 - name: fetch swift container ring file back
   fetch: src=/etc/swift/container.ring.gz dest=/tmp/swift-rings/ flat=yes
+  tags:
+    - swift_first_storage_node
+
 
 - name: fetch swift object ring file back
   fetch: src=/etc/swift/object.ring.gz dest=/tmp/swift-rings/ flat=yes
+  tags:
+    - swift_first_storage_node
+
 
 # push
 # on other swift storage nodes

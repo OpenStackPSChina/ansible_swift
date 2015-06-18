@@ -1,0 +1,5 @@
+---
+# on all other storage nodes
+- include: sync_swift_rings.yml
+# on all storage nodes
+#- include: config_swift_object_finalize.yml

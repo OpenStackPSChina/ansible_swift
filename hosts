@@ -2,13 +2,13 @@
 # Swift related sector
 
 # Swift proxy node
-[proxy_nodes]
+[swift_proxy_nodes]
 192.168.130.13
 
 # Swift storage node
-[storage_nodes]
+[swift_storage_nodes]
 192.168.130.14
 
 # Swift storage 1st node
-[storage_first_node]
+[swift_storage_first_node]
 192.168.130.14

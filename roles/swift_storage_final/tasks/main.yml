@@ -1,0 +1,3 @@
+---
+# on all storage nodes
+- include: config_swift_object_finalize.yml

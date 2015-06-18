@@ -12,5 +12,7 @@
 # TODO, need to split swift_storage_first_node role from swift_storage
   roles:
   - swift_common
-  - swift_storage
+  - swift_storage_common
+  - swift_storage_other_nodes
+  - swift_storage_final
   
