@@ -3,7 +3,7 @@
 # Config and install storage nodes
 #
 - name: install swift object support utils
-  apt: pkg={{ item }} state=installed
+  apt: pkg={{ item }} state=latest
   with_items: 
     - xfsprogs
     - rsync
