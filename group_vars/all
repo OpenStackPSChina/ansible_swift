@@ -35,5 +35,5 @@ storage_node_disk_list:
   - disk: sdb
 #  - disk: sdc
 
-swift_management_address: ansible_eth0.ipv4.address
-swift_rsync_address: ansible_eth0.ipv4.address
+# swift_management_address: ansible_eth0.ipv4.address
+# swift_rsync_address: ansible_eth0.ipv4.address

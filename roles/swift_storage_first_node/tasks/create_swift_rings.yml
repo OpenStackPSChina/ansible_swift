@@ -13,7 +13,7 @@
     - swift_first_storage_node
 
 - name: add storage node to account ring
-  shell: swift-ring-builder account.builder add r1z1-{{ swift_management_address }}:6002/{{ item.disk }} 100
+  shell: swift-ring-builder account.builder add r1z1-{{ ansible_eth0.ipv4.address }}:6002/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: "{{ storage_node_disk_list }}"
@@ -38,7 +38,7 @@
 
 
 - name: add storage node to container ring
-  shell: swift-ring-builder container.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
+  shell: swift-ring-builder container.builder add r1z1-{{ ansible_eth0.ipv4.address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: "{{ storage_node_disk_list }}"
@@ -64,7 +64,7 @@
 
 
 - name: add storage node to object ring
-  shell: swift-ring-builder object.builder add r1z1-{{ swift_management_address }}:6001/{{ item.disk }} 100
+  shell: swift-ring-builder object.builder add r1z1-{{ ansible_eth0.ipv4.address }}:6001/{{ item.disk }} 100
   args:
     chdir: /etc/swift/
   with_items: "{{ storage_node_disk_list }}"

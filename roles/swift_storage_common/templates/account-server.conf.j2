@@ -1,6 +1,6 @@
 [DEFAULT]
 # bind_ip = 0.0.0.0
-bind_ip = {{ swift_management_address }}
+bind_ip = {{ ansible_eth0.ipv4.address }}
 bind_port = 6002
 # bind_timeout = 30
 # backlog = 4096
