@@ -3,7 +3,7 @@
 #
 # Install and config Swift proxy node
 
-- include: init_swift_in_keystone.yml
+#- include: init_swift_in_keystone.yml
 - include: install_swift_proxy.yml
 - include: config_swift_proxy.yml
 

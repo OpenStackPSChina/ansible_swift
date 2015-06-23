@@ -10,5 +10,5 @@
     - swift-proxy
     - python-swiftclient
     - python-keystoneclient
-    - python-keystonemiddleware
+#    - python-keystonemiddleware
     - memcached

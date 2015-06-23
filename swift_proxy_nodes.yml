@@ -13,4 +13,6 @@
   roles:
   - swift_common
   - swift_proxy
-  
+
+  environment:
+    http_proxy: http://web-proxy.sgp.hp.com:8080/  

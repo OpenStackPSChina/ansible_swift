@@ -16,4 +16,6 @@
   - swift_storage_common
   - swift_storage_first_node
   - swift_storage_final
-  
+
+  environment:
+    http_proxy: http://web-proxy.sgp.hp.com:8080/  

@@ -33,7 +33,7 @@ swift_admin_url:
 # disk info
 storage_node_disk_list:
   - disk: sdb
-  - disk: sdc
+#  - disk: sdc
 
 swift_management_address: ansible_eth0.ipv4.address
 swift_rsync_address: ansible_eth0.ipv4.address
