@@ -3,7 +3,7 @@
 # config disks for swift object storage nodes
 #
 - name: format swift object disks
-  shell: mkfs.xfs /dev/{{ item.disk }}
+  command: mkfs.xfs -f /dev/{{ item.disk }}
   with_items: "{{ storage_node_disk_list }}"
 
 - name: create swift object disks mount points
