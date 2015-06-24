@@ -1,0 +1,23 @@
+---
+
+#
+# Clean the mounted disk images
+#
+
+- hosts:
+  - swift_storage_first_node
+
+  remote_user: "{{ ansible_remote_user }}"
+  become: yes
+  become_user: root
+  become_method: sudo
+
+  tasks:
+
+  - name: unmount all xfs mounts used by gluster
+    command: umount -l /dev/sdb
+    ignore_errors: yes
+
+  environment:
+    http_proxy: http://web-proxy.sgp.hp.com:8080/
+
